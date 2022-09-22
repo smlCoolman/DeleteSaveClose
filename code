@@ -1,0 +1,17 @@
+Sub Button1_Click()
+
+'Deletes Button
+ActiveSheet.Shapes("Button 1").Delete
+
+'Saves accourding to values in cells o16 c10  m33
+ThisFile = "C:\Users\Desktop\" & Range("O16").Value & "\" & Range("C10").Value & "_" & Range("M33") & "_" & Format(Now(), "mm-dd-yy, hh_mm_ss")
+ActiveWorkbook.SaveAs Filename:=ThisFile
+
+'Popup Box
+MsgBox ("Submitted")
+
+'Closes sheet
+ActiveWorkbook.Close SaveChanges:=False
+
+
+End Sub
